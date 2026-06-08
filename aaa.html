@@ -1,0 +1,355 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C语言学习平台</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei",sans-serif;
+        }
+
+        body {
+            background: #f4f7fa;
+            color: #333;
+        }
+
+        /* 导航栏 */
+        header {
+            background: #0d6efd;
+            color: white;
+            padding: 15px 50px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+            nav a:hover {
+                color: #ffd43b;
+            }
+
+        /* 首页 */
+        .hero {
+            height: 90vh;
+            background: linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5)), url("https://images.unsplash.com/photo-1515879218367-8466d910aaa4");
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 22px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            background: #ffd43b;
+            color: black;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+        }
+
+            .btn:hover {
+                background: white;
+            }
+
+        /* 通用 */
+        section {
+            padding: 80px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 38px;
+            color: #0d6efd;
+        }
+
+        /* 卡片 */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,.1);
+            transition: .3s;
+        }
+
+            .card:hover {
+                transform: translateY(-8px);
+            }
+
+            .card h3 {
+                color: #0d6efd;
+                margin-bottom: 15px;
+            }
+
+        /* 学习路线 */
+        .roadmap {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .step {
+            background: #0d6efd;
+            color: white;
+            padding: 20px;
+            width: 220px;
+            text-align: center;
+            border-radius: 15px;
+        }
+
+        /* 代码示例 */
+        .code-box {
+            background: #1e1e1e;
+            color: #00ff88;
+            padding: 25px;
+            border-radius: 15px;
+            overflow: auto;
+            font-family: Consolas;
+            font-size: 16px;
+        }
+
+        /* 在线练习 */
+        .practice {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,.1);
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            margin-top: 15px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            resize: none;
+            font-size: 16px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 12px 25px;
+            background: #0d6efd;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+            button:hover {
+                background: #084298;
+            }
+
+        /* 页脚 */
+        footer {
+            background: #0d6efd;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* 手机适配 */
+        @media(max-width:768px) {
+
+            .hero-content h1 {
+                font-size: 40px;
+            }
+
+            .hero-content p {
+                font-size: 18px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">C语言学习平台</div>
+
+            <ul>
+                <li><a href="#intro">基础知识</a></li>
+                <li><a href="#roadmap">学习路线</a></li>
+                <li><a href="#code">代码示例</a></li>
+                <li><a href="#practice">在线练习</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 首页 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>从零开始学习 C 语言</h1>
+            <p>掌握编程基础 · 理解算法思想 · 开启开发之路</p>
+            <a href="#intro" class="btn">立即学习</a>
+        </div>
+    </section>
+
+    <!-- 基础知识 -->
+    <section id="intro">
+        <h2 class="section-title">C语言基础知识</h2>
+
+        <div class="card-container">
+
+            <div class="card">
+                <h3>变量与数据类型</h3>
+                <p>
+                    学习 int、float、char 等数据类型，
+                    掌握变量定义与使用方法。
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>条件语句</h3>
+                <p>
+                    掌握 if、else、switch，
+                    实现程序逻辑判断。
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>循环结构</h3>
+                <p>
+                    学习 for、while、do-while，
+                    实现重复执行任务。
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>函数</h3>
+                <p>
+                    理解函数封装思想，
+                    提高代码复用性。
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 学习路线 -->
+    <section id="roadmap">
+        <h2 class="section-title">学习路线</h2>
+
+        <div class="roadmap">
+
+            <div class="step">① C语言简介</div>
+            <div class="step">② 数据类型</div>
+            <div class="step">③ 运算符</div>
+            <div class="step">④ 条件语句</div>
+            <div class="step">⑤ 循环结构</div>
+            <div class="step">⑥ 数组与字符串</div>
+            <div class="step">⑦ 函数</div>
+            <div class="step">⑧ 指针</div>
+            <div class="step">⑨ 结构体</div>
+            <div class="step">⑩ 项目实战</div>
+
+        </div>
+    </section>
+
+    <!-- 代码示例 -->
+    <section id="code">
+        <h2 class="section-title">Hello World 示例</h2>
+
+        <div class="code-box">
+<pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    printf("Hello World!");
+
+    return 0;
+}
+</pre>
+        </div>
+
+    </section>
+
+    <!-- 在线练习 -->
+    <section id="practice">
+
+        <h2 class="section-title">在线练习</h2>
+
+        <div class="practice">
+
+            <p><strong>练习题：</strong>编写程序输出你的姓名。</p>
+
+<textarea placeholder="在这里输入你的C语言代码..."></textarea>
+
+            <button onclick="submitCode()">
+                提交代码
+            </button>
+
+            <p id="result"></p>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2025 C语言学习平台 | HTML + CSS + JavaScript 教学网站</p>
+    </footer>
+
+    <script>
+function submitCode(){
+    document.getElementById("result").innerHTML =
+    "代码已提交！（演示版，不执行编译）";
+}
+    </script>
+
+</body>
+</html>
