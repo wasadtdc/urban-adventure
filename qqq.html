@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C语言学习平台</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        body {
+            background: #f4f7fa;
+            color: #333;
+        }
+
+        /* ===== 导航栏 ===== */
+        header {
+            background: #0d6efd;
+            color: white;
+            padding: 15px 50px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+            nav a:hover {
+                color: #ffd43b;
+            }
+
+        /* ===== 首页 ===== */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url("https://images.unsplash.com/photo-1515879218367-8466d910aaa4");
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 60px;
+        }
+
+        .hero-content p {
+            font-size: 22px;
+            margin: 20px 0;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            background: #ffd43b;
+            border-radius: 30px;
+            text-decoration: none;
+            color: black;
+        }
+
+        /* ===== 通用 ===== */
+        section {
+            padding: 80px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #0d6efd;
+            font-size: 38px;
+        }
+
+        /* ===== 卡片 ===== */
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,.1);
+        }
+
+        /* ===== 路线 ===== */
+        .roadmap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .step {
+            background: #0d6efd;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        /* ===== 在线运行器（融合第一个页面） ===== */
+        .practice-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,.1);
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            margin-top: 10px;
+            padding: 10px;
+            font-family: monospace;
+        }
+
+        select, button {
+            margin-top: 10px;
+            padding: 10px;
+        }
+
+        button {
+            background: #0d6efd;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        pre {
+            background: #1e1e1e;
+            color: #00ff88;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 10px;
+            white-space: pre-wrap;
+        }
+
+        /* ===== 页脚 ===== */
+        footer {
+            background: #0d6efd;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ===== 导航 ===== -->
+    <header>
+        <nav>
+            <div class="logo">C语言学习平台</div>
+            <ul>
+                <li><a href="#intro">基础</a></li>
+                <li><a href="#roadmap">路线</a></li>
+                <li><a href="#practice">在线运行</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===== 首页 ===== -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>从零开始学 C 语言</h1>
+            <p>学习 + 编程 + 实战一体化平台</p>
+            <a class="btn" href="#practice">开始编程</a>
+        </div>
+    </section>
+
+    <!-- ===== 基础知识 ===== -->
+    <section id="intro">
+        <h2 class="section-title">基础知识</h2>
+
+        <div class="card-container">
+            <div class="card">变量 / 类型</div>
+            <div class="card">条件语句</div>
+            <div class="card">循环</div>
+            <div class="card">函数</div>
+        </div>
+    </section>
+
+    <!-- ===== 学习路线 ===== -->
+    <section id="roadmap">
+        <h2 class="section-title">学习路线</h2>
+
+        <div class="roadmap">
+            <div class="step">① 基础语法</div>
+            <div class="step">② 条件循环</div>
+            <div class="step">③ 数组</div>
+            <div class="step">④ 函数</div>
+            <div class="step">⑤ 指针</div>
+            <div class="step">⑥ 项目</div>
+        </div>
+    </section>
+
+    <!-- ===== 在线运行器（核心合体部分） ===== -->
+    <section id="practice">
+        <h2 class="section-title">在线代码运行器</h2>
+
+        <div class="practice-box">
+
+            <label>语言：</label>
+            <select id="language">
+                <option value="50">C</option>
+                <option value="54">C++</option>
+                <option value="71">Python</option>
+            </select>
+
+<textarea id="code">
+#include <stdio.h>
+int main() {
+    printf("Hello World!\n");
+    return 0;
+}
+</textarea>
+
+<textarea id="input" placeholder="输入(stdin)"></textarea>
+
+            <button onclick="runCode()">运行代码</button>
+
+<pre id="output"></pre>
+
+        </div>
+    </section>
+
+    <!-- ===== 页脚 ===== -->
+    <footer>
+        © 2026 C语言学习平台
+    </footer>
+
+    <script>
+        async function runCode() {
+            const code = document.getElementById("code").value;
+            const language_id = parseInt(document.getElementById("language").value);
+            const stdin = document.getElementById("input").value;
+            const outputEl = document.getElementById("output");
+
+            outputEl.textContent = "运行中...";
+
+            try {
+                const res = await fetch("https://ce.judge0.com/submissions/?base64_encoded=false&wait=true", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        language_id,
+                        source_code: code,
+                        stdin
+                    })
+                });
+
+                const result = await res.json();
+                console.log(result);
+
+                if (result.compile_output)
+                    outputEl.textContent = "编译错误:\n" + result.compile_output;
+                else if (result.stderr)
+                    outputEl.textContent = "运行错误:\n" + result.stderr;
+                else if (result.stdout)
+                    outputEl.textContent = result.stdout;
+                else
+                    outputEl.textContent = "没有输出";
+
+            } catch (e) {
+                outputEl.textContent = "请求失败: " + e;
+            }
+        }
+    </script>
+
+</body>
+</html>
